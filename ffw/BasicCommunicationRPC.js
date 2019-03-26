@@ -300,11 +300,11 @@ FFW.BasicCommunication = FFW.RPCObserver
           SDL.SDLModel.onFileRemoved(notification.params);
         }
         if (notification.method == this.onStatusUpdateNotification) {
-          if(!SDL.ServiceUpdatePopUp.active) {
-            SDL.PopUp.create().appendTo('body').popupActivate(
-              'onStatusUpdate Notification: ' + notification.params.status
-            );
-          }
+          var popUp = SDL.PopUp.create().appendTo('body');
+          popUp.set('minimalSize',SDL.ServiceUpdatePopUp.active);
+          popUp.popupActivate(
+            'onStatusUpdate Notification: ' + notification.params.status
+          );
           var messageCode = '';
           switch (notification.params.status) {
             case 'UP_TO_DATE':
