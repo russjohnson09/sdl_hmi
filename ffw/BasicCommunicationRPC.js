@@ -325,6 +325,10 @@ FFW.BasicCommunication = FFW.RPCObserver
             case 'UPDATE_NEEDED':
             {
               messageCode = 'StatusNeeded';
+              if (FLAGS.ExternalPolicies === true && 
+                  SDL.SDLModel.data.policyUpdateRetry.isRetry) {
+                SDL.SettingsController.policyUpdateRetry();
+              }
               break;
             }
           }
