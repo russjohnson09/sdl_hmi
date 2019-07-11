@@ -37,8 +37,8 @@ FFW.ExternalPolicies = Em.Object.create({
     sysReqParams: {},
 
     connect: function() {
-        this.packClient = new WebSocket('ws://127.0.0.1:8088');
-        this.unpackClient = new WebSocket('ws://127.0.0.1:8089');
+        this.packClient = new WebSocket('ws://core.core:8088');
+        this.unpackClient = new WebSocket('ws://core.core:8089');
         var self = this;
         this.packClient.onopen = function(evt) {
             self.onWSOpen(evt, this);
@@ -93,14 +93,14 @@ FFW.ExternalPolicies = Em.Object.create({
     onWSClose: function(evt) {
         Em.Logger.log('ExternalPolicies onWSClose');
     },
-    
+
     onWSError: function(evt) {
         Em.Logger.log('ExternalPolicies onWSError');
     },
     pack: function(params) {
         Em.Logger.log("Pack")
         this.sysReqParams = params;
-        this.packClient.send(this.sysReqParams.policyUpdateFile);     
+        this.packClient.send(this.sysReqParams.policyUpdateFile);
     },
     unpack: function(file) {
         //var strJSON = JSON.stringify(obj);

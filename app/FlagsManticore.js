@@ -46,47 +46,9 @@ FLAGS = Em.Object.create(
      * Set language for localization
      */
     SET_LOCALIZATION: 'eng',
-      //core-broker
-    // WEBSOCKET_URL: 'ws://core.core:8087',
-    //   WEBSOCKET_URL: 'ws://core.core:32778',
-    //   WEBSOCKET_URL: 'ws:/192.168.1.201:32778',
 
-      // WEBSOCKET_URL: 'ws:/127.0.0.1:32778',
-
-      //core_simple_test_2
-      //tcp 12347
-      // WEBSOCKET_URL: 'ws://192.168.1.57:8089',
-
-      //core_simple_test
       //tcp 12346
-      // WEBSOCKET_URL: 'ws://192.168.1.57:8088',
-
-      //core
-      //tcp 32794
-      //8087 -> 32795
-      WEBSOCKET_URL: 'ws://192.168.1.201:8087',
-
-//       vagrant@sdl-core:~$ lsof -i
-// COMMAND     PID    USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
-// MainThrea 15450 vagrant    7u  IPv4  43753      0t0  TCP *:8090 (LISTEN)
-// MainThrea 15450 vagrant    9u  IPv4  43755      0t0  TCP *:12345 (LISTEN)
-// MainThrea 15450 vagrant   24u  IPv4  43773      0t0  TCP *:8087 (LISTEN)
-// MainThrea 15450 vagrant   25u  IPv4  43850      0t0  TCP 192.168.1.201:8087->Michaels-MBP.localdomain:64574 (ESTABLISHED)
-// MainThrea 15450 vagrant   26u  IPv4  43854      0t0  TCP 192.168.1.201:8087->Michaels-MBP.localdomain:64575 (ESTABLISHED)
-// MainThrea 15450 vagrant   27u  IPv4  43858      0t0  TCP 192.168.1.201:8087->Michaels-MBP.localdomain:64576 (ESTABLISHED)
-// MainThrea 15450 vagrant   28u  IPv4  44217      0t0  TCP 192.168.1.201:8087->Michaels-MBP.localdomain:64577 (ESTABLISHED)
-// MainThrea 15450 vagrant   29u  IPv4  44221      0t0  TCP 192.168.1.201:8087->Michaels-MBP.localdomain:64578 (ESTABLISHED)
-// MainThrea 15450 vagrant   30u  IPv4  44225      0t0  TCP 192.168.1.201:8087->Michaels-MBP.localdomain:64579 (ESTABLISHED)
-// MainThrea 15450 vagrant   31u  IPv4  44229      0t0  TCP 192.168.1.201:8087->Michaels-MBP.localdomain:64580 (ESTABLISHED)
-// MainThrea 15450 vagrant   32u  IPv4  43861      0t0  TCP 192.168.1.201:8087->Michaels-MBP.localdomain:64581 (ESTABLISHED)
-
-
-// WEBSOCKET_URL: 'ws://core.core:8087',
-
-
-
-
-      // 192.168.1.57
+      WEBSOCKET_URL: 'ws://192.168.1.201:8088',
 
       //python simple rpc client...
     PYTHON_SERVER_URL: 'ws://core.core:8081',
