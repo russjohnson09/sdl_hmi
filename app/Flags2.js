@@ -64,7 +64,7 @@ FLAGS = Em.Object.create(
       //core
       //tcp 32794
       //8087 -> 32795
-      WEBSOCKET_URL: 'ws://192.168.1.201:8087',
+      WEBSOCKET_URL: 'ws://192.168.1.223:8087',
 
 //       vagrant@sdl-core:~$ lsof -i
 // COMMAND     PID    USER   FD   TYPE DEVICE SIZE/OFF NODE NAME

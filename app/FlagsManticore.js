@@ -48,12 +48,16 @@ FLAGS = Em.Object.create(
     SET_LOCALIZATION: 'eng',
 
       //tcp 12346
-      WEBSOCKET_URL: 'ws://192.168.1.201:8088',
+      // WEBSOCKET_URL: 'ws://192.168.1.57:8088',
+
+      //8087
+      //tcp 12345
+      WEBSOCKET_URL: 'ws://192.168.1.57:8087',
 
       //python simple rpc client...
-    PYTHON_SERVER_URL: 'ws://core.core:8081',
+    //PYTHON_SERVER_URL: 'ws://core.core:8081',
     //
-      CAN_WEBSOCKET_URL: 'ws://core.core:2468',
+      //CAN_WEBSOCKET_URL: 'ws://core.core:2468',
     TOUCH_EVENT_STARTED: false,
     BasicCommunication: null,
     UI: null,
