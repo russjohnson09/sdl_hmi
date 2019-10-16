@@ -64,7 +64,13 @@ FLAGS = Em.Object.create(
       //core
       //tcp 32794
       //8087 -> 32795
-      WEBSOCKET_URL: 'ws://192.168.1.222:8087',
+      // WEBSOCKET_URL: 'ws://192.168.1.222:8087',
+      // WEBSOCKET_URL: 'ws://192.168.1.57:9000',
+      // WEBSOCKET_URL: 'ws://localhost:9010',
+      // WEBSOCKET_URL: 'ws://localhost:9001', //manticore
+
+      //either the core websocket or the broker websocket.
+      WEBSOCKET_URL: 'ws://localhost:8087', //manticore
 
 //       vagrant@sdl-core:~$ lsof -i
 // COMMAND     PID    USER   FD   TYPE DEVICE SIZE/OFF NODE NAME

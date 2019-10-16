@@ -52,7 +52,11 @@ FLAGS = Em.Object.create(
 
       //8087
       //tcp 12345
-      WEBSOCKET_URL: 'ws://192.168.1.57:8087',
+
+      //8888 log
+
+      //9000 ws ->32778
+      WEBSOCKET_URL: 'ws://192.168.1.57:32778',
 
       //python simple rpc client...
     //PYTHON_SERVER_URL: 'ws://core.core:8081',
