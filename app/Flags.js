@@ -35,42 +35,40 @@
  * @version 1.0
  */
 
-// { "type": "services", "data": { "core-broker": "ws://bbi815erqpmcbzea.manticore.localhost:80", "core-tcp": "manticore.localhost:6751", "core-file": "http://t8emdqddtjjv6o04.manticore.localhost:80", "core-log": "ws://7fqd9hkj4pian65l.manticore.localhost:80", "core-policy": "http://y9jlpxh92zp2cs9j.manticore.localhost:80", "hmi-user": "http://1p8oseazmmjmsfhd.manticore.localhost:80" } }
+let urlParams = new URLSearchParams(window.location.search);
 
-//tcp must be assigned a new port each time unfortunately. used by phones to connect in debug mode.
+console.log(`urlParams`, urlParams);
 
-// { "type": "services", "data": { "core-broker": "ws://99zhddemftsv5nwd.manticore.localhost:80", "core-tcp": "manticore.localhost:7000", "core-file": "http://5i8oynsuvplk5iyr.manticore.localhost:80", "core-log": "ws://sbfy4zrslhzb6u1s.manticore.localhost:80", "core-policy": "http://mjgkf8w98s6b7622.manticore.localhost:80", "hmi-user": "http://6mw4uv7mcgiqityv.manticore.localhost:80" } }
-FLAGS = Em.Object.create(
-  {
+let flags = {
     /**
      * Set language for localization
      */
     SET_LOCALIZATION: 'eng',
-      //core-broker
+    //core-broker
     // WEBSOCKET_URL: 'ws://core.core:8087',
     //   WEBSOCKET_URL: 'ws://core.core:32778',
     //   WEBSOCKET_URL: 'ws:/192.168.1.201:32778',
 
-      // WEBSOCKET_URL: 'ws:/127.0.0.1:32778',
+    // WEBSOCKET_URL: 'ws:/127.0.0.1:32778',
 
-      //core_simple_test_2
-      //tcp 12347
-      // WEBSOCKET_URL: 'ws://192.168.1.57:8089',
+    //core_simple_test_2
+    //tcp 12347
+    // WEBSOCKET_URL: 'ws://192.168.1.57:8089',
 
-      //core_simple_test
-      //tcp 12346
-      // WEBSOCKET_URL: 'ws://192.168.1.57:8088',
+    //core_simple_test
+    //tcp 12346
+    // WEBSOCKET_URL: 'ws://192.168.1.57:8088',
 
-      //core
-      //tcp 32794
-      //8087 -> 32795
-      // WEBSOCKET_URL: 'ws://192.168.1.222:8087',
-      // WEBSOCKET_URL: 'ws://192.168.1.57:9000',
-      // WEBSOCKET_URL: 'ws://localhost:9010',
-      // WEBSOCKET_URL: 'ws://localhost:9001', //manticore
+    //core
+    //tcp 32794
+    //8087 -> 32795
+    // WEBSOCKET_URL: 'ws://192.168.1.222:8087',
+    // WEBSOCKET_URL: 'ws://192.168.1.57:9000',
+    // WEBSOCKET_URL: 'ws://localhost:9010',
+    // WEBSOCKET_URL: 'ws://localhost:9001', //manticore
 
-      //either the core websocket or the broker websocket.
-      WEBSOCKET_URL: 'ws://localhost:8087', //manticore
+    //either the core websocket or the broker websocket.
+    WEBSOCKET_URL: 'ws://localhost:8087', //manticore
 
 //       vagrant@sdl-core:~$ lsof -i
 // COMMAND     PID    USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
@@ -86,18 +84,13 @@ FLAGS = Em.Object.create(
 // MainThrea 15450 vagrant   31u  IPv4  44229      0t0  TCP 192.168.1.201:8087->Michaels-MBP.localdomain:64580 (ESTABLISHED)
 // MainThrea 15450 vagrant   32u  IPv4  43861      0t0  TCP 192.168.1.201:8087->Michaels-MBP.localdomain:64581 (ESTABLISHED)
 
-
 // WEBSOCKET_URL: 'ws://core.core:8087',
+    // 192.168.1.57
 
-
-
-
-      // 192.168.1.57
-
-      //python simple rpc client...
+    //python simple rpc client...
     PYTHON_SERVER_URL: 'ws://core.core:8081',
     //
-      CAN_WEBSOCKET_URL: 'ws://core.core:2468',
+    CAN_WEBSOCKET_URL: 'ws://core.core:2468',
     TOUCH_EVENT_STARTED: false,
     BasicCommunication: null,
     UI: null,
@@ -116,5 +109,22 @@ FLAGS = Em.Object.create(
      */
     SimpleFunctionality: 1,
     ExternalPolicies: false
-  }
+};
+
+for (let key in flags) {
+    console.log(`check key ${key}`);
+    let val = urlParams.get(key);
+    if (val) {
+        console.log(`set key ${key} ${val}`);
+        flags[key] = val;
+    }
+}
+
+// { "type": "services", "data": { "core-broker": "ws://bbi815erqpmcbzea.manticore.localhost:80", "core-tcp": "manticore.localhost:6751", "core-file": "http://t8emdqddtjjv6o04.manticore.localhost:80", "core-log": "ws://7fqd9hkj4pian65l.manticore.localhost:80", "core-policy": "http://y9jlpxh92zp2cs9j.manticore.localhost:80", "hmi-user": "http://1p8oseazmmjmsfhd.manticore.localhost:80" } }
+
+//tcp must be assigned a new port each time unfortunately. used by phones to connect in debug mode.
+
+// { "type": "services", "data": { "core-broker": "ws://99zhddemftsv5nwd.manticore.localhost:80", "core-tcp": "manticore.localhost:7000", "core-file": "http://5i8oynsuvplk5iyr.manticore.localhost:80", "core-log": "ws://sbfy4zrslhzb6u1s.manticore.localhost:80", "core-policy": "http://mjgkf8w98s6b7622.manticore.localhost:80", "hmi-user": "http://6mw4uv7mcgiqityv.manticore.localhost:80" } }
+FLAGS = Em.Object.create(
+    flags
 );
