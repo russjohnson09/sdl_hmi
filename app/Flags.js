@@ -78,8 +78,26 @@ let flags = {
      * 2 - P
      */
     SimpleFunctionality: 1,
-    ExternalPolicies: false
+    ExternalPolicies: false,
+    /**
+     * Vehicle zones emulation:
+     * 'no_emulation' - emulation disabled
+     * 'vehicle_2x3' - emulate 2x3 one level vehicle
+     * 'vehicle_3x3' - emulate 3x3 one level vehicle
+     */
+    VehicleEmulationType: 'vehicle_2x3',
+
+    /**
+     * Flag for storing last applied vehicle emulation type
+     */
+    lastVehicleEmulationtype: 'vehicle_2x3'
 };
+
+
+
+
+
+
 
 for (let key in flags) {
     console.log(`check key ${key}`);
