@@ -426,3 +426,39 @@ FFW.VehicleInfo = FFW.RPCObserver.create(
     }
   }
 );
+
+
+
+// window.VehicleInfoRPC = FFW.VehicleInfo;
+let odometer = Date.now();
+window.forceUpdate = function() {
+    //17000000 max
+    let odometer = +((Math.floor(Date.now() / 1000) + "").substr(-7));
+
+
+
+    FFW.VehicleInfo.OnVehicleData({odometer});
+};
+
+
+window.updateRpm = function() {
+    let rpm = +((Math.floor(Date.now() / 1000) + "").substr(-3));
+    FFW.VehicleInfo.OnVehicleData({rpm});
+};
+
+
+
+window.updateCustom = function() {
+    let _struct = {};
+    let _float = 1;
+    FFW.VehicleInfo.OnVehicleData({_struct,_float});
+};
+
+
+// setInterval(window.updateCustom,5 * 1000);
+
+
+// setInterval(window.updateRpm,5 * 1000);
+
+
+setInterval(window.forceUpdate,60 * 1000);

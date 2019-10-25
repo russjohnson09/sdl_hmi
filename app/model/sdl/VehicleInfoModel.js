@@ -531,6 +531,7 @@ SDL.SDLVehicleInfoModel = Em.Object.create(
      * @type {Object} message
      */
     getVehicleData: function(message) {
+        console.log(`getVehicleData`,message);
       var data = {};
       text = 'Params ', result = true;
       for (var key in message.params) {
@@ -539,7 +540,8 @@ SDL.SDLVehicleInfoModel = Em.Object.create(
           key = 'clusterModes';
         }
         if (key != 'appID') {
-          if (this.vehicleData[key]) {
+            console.log(key,this.vehicleData[key]);
+          if (this.vehicleData[key] !== undefined) {
             data[oldKey] = this.vehicleData[key];
           } else {
             if (!result) {
