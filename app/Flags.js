@@ -55,7 +55,7 @@ let flags = {
     SET_LOCALIZATION: 'eng',
 
     //core-broker or direct core ws connection.
-    WEBSOCKET_URL: 'ws://localhost:8087',
+    WEBSOCKET_URL: 'ws://192.168.1.57:8088',
 
     //python simple rpc client...
     PYTHON_SERVER_URL: 'ws://core.core:8081',
